@@ -1,0 +1,17 @@
+
+
+InputDetails:
+
+
+{
+  "remotecredentials":true,
+                  "connectionType":"",
+                  "host":"",
+                  "port":12,
+                  "username":"",
+                  "password":"",
+                  "remotepath":"/",		
+	            "copyBookPath":"",
+				"DataFilePath":""
+				"type":""
+                }

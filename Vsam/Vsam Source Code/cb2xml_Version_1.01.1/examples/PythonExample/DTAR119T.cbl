@@ -1,0 +1,11 @@
+           05 DTAR119-STORE-NO-T                 PIC 9(3).
+           05 DTAR119-TRANS-DATE-T               PIC 9(7).
+           05 DTAR119-TRANS-CODE-T               PIC 9(2).
+           05 DTAR119-CARD-NO-T                  PIC 9(16).
+           05 DTAR119-TERMINAL-ID-T              PIC 9(3).
+           05 DTAR119-TRANS-NO-T                 PIC 9(4).
+           05 DTAR119-BONUS-POINTS-T             PIC -9(6).
+           05 DTAR119-KEYCODE-T                  PIC 9(8).
+           05 DTAR119-KEYCODE-AMT-T              PIC -9(7).9(2).
+           05 DTAR119-KEYCODE-QTY-T              PIC -9(7).9(2).
+           05 DTAR119-PROM-NO-T                  PIC 9(5).

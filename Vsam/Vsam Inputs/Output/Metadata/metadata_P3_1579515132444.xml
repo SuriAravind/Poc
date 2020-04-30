@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata DBS="VSAM" HOST="localhost" PORT="00000" DATABASE="P3" SCHEMA="P3" FULLORSELECTED="FULL" SELECTED="">
+		<caseSensitive>false</caseSensitive>
+		<defaultSchema>P3</defaultSchema>
+		<validatingOnIngest>false</validatingOnIngest>
+		<locale>en-US</locale>
+		<schemaMetadataList>
+		<schemaMetadata>
+		<name>P3</name>
+		<tableCount>1</tableCount>
+		<tableMetadataList>
+<tableMetadata>
+		<name>P3-Emp</name>
+		<recordCount>4</recordCount>
+		<columnList>
+		<column>
+		<name>First-name</name>
+		<ordinal>0</ordinal>
+		<type>VARCHAR</type>
+		<typeLength>9</typeLength>
+		<index>false</index></column>
+		<column>
+		<name>last-name</name>
+		<ordinal>1</ordinal>
+		<type>VARCHAR</type>
+		<typeLength>10</typeLength>
+		<index>false</index></column>
+		<column>
+		<name>Age</name>
+		<ordinal>2</ordinal>
+		<type>INTEGER</type>
+		<typeLength>3</typeLength>
+		<index>false</index></column>
+		<column>
+		<name>Gender</name>
+		<ordinal>3</ordinal>
+		<type>VARCHAR</type>
+		<typeLength>6</typeLength>
+		<index>false</index></column>
+		<column>
+		<name>Place</name>
+		<ordinal>4</ordinal>
+		<type>VARCHAR</type>
+		<typeLength>15</typeLength>
+		<index>false</index></column></columnList></tableMetadata></tableMetadataList>
+</schemaMetadata></schemaMetadataList></metadata>

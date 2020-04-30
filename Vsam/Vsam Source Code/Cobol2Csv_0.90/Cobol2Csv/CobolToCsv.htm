@@ -1,0 +1,338 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 3.2//EN">
+<HTML><HEAD>
+<TITLE>Cobol To Csv</TITLE>
+<!-- Begin Header Records  ========================================== -->
+<!-- F:\Work\CobolToCsv\Documentation\CobolToCsv.dcf converted by B2H -->
+<!-- R4.7 (390) (WINNT) on 28 Dec 2018 at 11:28:00                    -->
+<META HTTP-EQUIV="updated" CONTENT="Fri, 28 Dec 2018 11:27:53">
+<META HTTP-EQUIV="review" CONTENT="Sat, 28 Dec 2019 11:27:53">
+<META HTTP-EQUIV="expires" CONTENT="Mon, 28 Dec 2020 11:27:53">
+</HEAD><BODY>
+<!-- End Header Records  ============================================ -->
+<A NAME="Top_Of_Page"></A>
+<P>
+<P>
+<P>
+<P>
+<P>
+<P>
+<P>
+<a name="Toc"/>
+<P><B><A NAME="ToC_1" HREF="#Header_1" >Cobol To Csv</A></B><BR>
+<MENU>
+<LI><A NAME="ToC_2" HREF="#Header_2" >MultiRecordCobol2Csv program</A>
+<MENU>
+<LI><A NAME="ToC_3" HREF="#Header_3" >Java interface to MultiRecordCobol2Csv</A>
+</MENU>
+<LI><A NAME="ToC_4" HREF="#Header_4" >Alternative Cobol Conversion options</A>
+<LI><A NAME="ToC_5" HREF="#Header_5" >Cobol to Csv Options</A>
+<LI><A NAME="ToC_6" HREF="#Header_6" >RecordEditor</A>
+<MENU>
+<LI><A NAME="ToC_7" HREF="#Header_7" >Starting RecordEditor's Code Generation</A>
+<LI><A NAME="ToC_8" HREF="#Header_8" >RecordEdit Summary</A>
+</MENU></MENU><P>
+<HR><H1><A NAME="Header_1" HREF="#ToC_1" >Cobol To Csv</A></H1>
+<P>This project is for converting <B>Simple</B> <I>Cobol Data Files</I> to/from <I>Csv Files</I>.
+The project supports several Cobol dialects + number of other options. CobolToCsv depends on
+the following projects:
+<UL COMPACT>
+ <LI><a href="https://sourceforge.net/projects/cb2xml">cb2xml</a> - Converts a Cobol Copybook to Xml.
+ <LI><a href="https://sourceforge.net/projects/jrecord">JRecord</a> - Read/Write Cobol data files using a Cobol Copybook in Java. It also supplies the
+Csv file handling.
+</UL>
+<P>
+<P>This project will take a Cobol-Copybook and Cobol-Data-File
+<P>
+<P>Cobol-Copybook&#58;
+<pre><font color="#000000"><span style="background:#dbdbdb; border-right:solid 2px black; margin-right:5px; "><font color="#000000"> 9 </font></span><font color="#cc6600">000900</font><font color="#cc6600"> </font>       <font color="#ff0000">03</font>  DTAR020-KCODE-STORE-KEY.
+<span style="background:#dbdbdb; border-right:solid 2px black; margin-right:5px; "><font color="#990066">10 </font></span><font color="#cc6600">001000</font><font color="#cc6600"> </font>           <font color="#ff0000">05</font> DTAR020-KEYCODE-NO      <font color="#006699"><strong>PIC</strong></font> X(<font color="#ff0000">08</font>).
+<span style="background:#dbdbdb; border-right:solid 2px black; margin-right:5px; "><font color="#000000">11 </font></span><font color="#cc6600">001100</font><font color="#cc6600"> </font>           <font color="#ff0000">05</font> DTAR020-STORE-NO        <font color="#006699"><strong>PIC</strong></font> S9(<font color="#ff0000">03</font>)   <font color="#006699"><strong>COMP-3</strong></font>.
+<span style="background:#dbdbdb; border-right:solid 2px black; margin-right:5px; "><font color="#000000">12 </font></span><font color="#cc6600">001200</font><font color="#cc6600"> </font>       <font color="#ff0000">03</font>  DTAR020-DATE               <font color="#006699"><strong>PIC</strong></font> S9(<font color="#ff0000">07</font>)   <font color="#006699"><strong>COMP-3</strong></font>.
+<span style="background:#dbdbdb; border-right:solid 2px black; margin-right:5px; "><font color="#000000">13 </font></span><font color="#cc6600">001300</font><font color="#cc6600"> </font>       <font color="#ff0000">03</font>  DTAR020-DEPT-NO            <font color="#006699"><strong>PIC</strong></font> S9(<font color="#ff0000">03</font>)   <font color="#006699"><strong>COMP-3</strong></font>.
+<span style="background:#dbdbdb; border-right:solid 2px black; margin-right:5px; "><font color="#000000">14 </font></span><font color="#cc6600">001400</font><font color="#cc6600"> </font>       <font color="#ff0000">03</font>  DTAR020-QTY-SOLD           <font color="#006699"><strong>PIC</strong></font> S9(<font color="#ff0000">9</font>)    <font color="#006699"><strong>COMP-3</strong></font>.
+<span style="background:#dbdbdb; border-right:solid 2px black; margin-right:5px; "><font color="#990066">15 </font></span><font color="#cc6600">001500</font><font color="#cc6600"> </font>       <font color="#ff0000">03</font>  DTAR020-SALE-PRICE         <font color="#006699"><strong>PIC</strong></font> S9(<font color="#ff0000">9</font>)V99 <font color="#006699"><strong>COMP-3</strong></font>.
+</font></pre>
+<P>
+<P>Cobol-Data-File&#58;
+<P>
+<img SRC="Diagram/dtar020.png">
+<P>
+<P>And the script to convert the Cobol Data file to a  Csv file (field delimiter=,)&#58;
+<PRE>
+    java -jar ../lib/Cobol2Csv.jar ^
+                      -C DTAR020.cbl  -IFS Fixed_Length    -IC CP037 ^
+                      -Q DoubleQuote  -Delimiter , ^
+                      -I in/DTAR020.bin  -O out/o_DTAR020_a.csv
+ 
+</PRE><P><P>And the Csv output from the above&#58;
+<pre><font color="#000000"><span style="background:#dbdbdb; border-right:solid 2px black; margin-right:5px; "><font color="#000000"> 1 </font></span>DTAR020_KEYCODE_NO<font color="#0000ff">,</font><font color="#cc0000">DTAR020_STORE_NO</font><font color="#0000ff">,</font>DTAR020_DATE<font color="#0000ff">,</font><font color="#cc0000">DTAR020_DEPT_NO</font><font color="#0000ff">,</font>DTAR020_QTY_SOLD<font color="#0000ff">,</font><font color="#cc0000">DTAR020_SALE_PRICE</font>
+<span style="background:#dbdbdb; border-right:solid 2px black; margin-right:5px; "><font color="#000000"> 2 </font></span>69684558<font color="#0000ff">,</font><font color="#cc0000">20</font><font color="#0000ff">,</font>40118<font color="#0000ff">,</font><font color="#cc0000">280</font><font color="#0000ff">,</font>1<font color="#0000ff">,</font><font color="#cc0000">19.00</font>
+<span style="background:#dbdbdb; border-right:solid 2px black; margin-right:5px; "><font color="#000000"> 3 </font></span>69684558<font color="#0000ff">,</font><font color="#cc0000">20</font><font color="#0000ff">,</font>40118<font color="#0000ff">,</font><font color="#cc0000">280</font><font color="#0000ff">,</font>-1<font color="#0000ff">,</font><font color="#cc0000">-19.00</font>
+<span style="background:#dbdbdb; border-right:solid 2px black; margin-right:5px; "><font color="#000000"> 4 </font></span>69684558<font color="#0000ff">,</font><font color="#cc0000">20</font><font color="#0000ff">,</font>40118<font color="#0000ff">,</font><font color="#cc0000">280</font><font color="#0000ff">,</font>1<font color="#0000ff">,</font><font color="#cc0000">5.01</font>
+<span style="background:#dbdbdb; border-right:solid 2px black; margin-right:5px; "><font color="#990066"> 5 </font></span>69694158<font color="#0000ff">,</font><font color="#cc0000">20</font><font color="#0000ff">,</font>40118<font color="#0000ff">,</font><font color="#cc0000">280</font><font color="#0000ff">,</font>1<font color="#0000ff">,</font><font color="#cc0000">19.00</font>
+<span style="background:#dbdbdb; border-right:solid 2px black; margin-right:5px; "><font color="#000000"> 6 </font></span>69694158<font color="#0000ff">,</font><font color="#cc0000">20</font><font color="#0000ff">,</font>40118<font color="#0000ff">,</font><font color="#cc0000">280</font><font color="#0000ff">,</font>-1<font color="#0000ff">,</font><font color="#cc0000">-19.00</font>
+<span style="background:#dbdbdb; border-right:solid 2px black; margin-right:5px; "><font color="#000000"> 7 </font></span>69694158<font color="#0000ff">,</font><font color="#cc0000">20</font><font color="#0000ff">,</font>40118<font color="#0000ff">,</font><font color="#cc0000">280</font><font color="#0000ff">,</font>1<font color="#0000ff">,</font><font color="#cc0000">5.01</font>
+<span style="background:#dbdbdb; border-right:solid 2px black; margin-right:5px; "><font color="#000000"> 8 </font></span>63604808<font color="#0000ff">,</font><font color="#cc0000">20</font><font color="#0000ff">,</font>40118<font color="#0000ff">,</font><font color="#cc0000">170</font><font color="#0000ff">,</font>1<font color="#0000ff">,</font><font color="#cc0000">4.87</font>
+<span style="background:#dbdbdb; border-right:solid 2px black; margin-right:5px; "><font color="#000000"> 9 </font></span>62684671<font color="#0000ff">,</font><font color="#cc0000">20</font><font color="#0000ff">,</font>40118<font color="#0000ff">,</font><font color="#cc0000">685</font><font color="#0000ff">,</font>1<font color="#0000ff">,</font><font color="#cc0000">69.99</font>
+<span style="background:#dbdbdb; border-right:solid 2px black; margin-right:5px; "><font color="#990066">10 </font></span>62684671<font color="#0000ff">,</font><font color="#cc0000">20</font><font color="#0000ff">,</font>40118<font color="#0000ff">,</font><font color="#cc0000">685</font><font color="#0000ff">,</font>-1<font color="#0000ff">,</font><font color="#cc0000">-69.99</font>
+<span style="background:#dbdbdb; border-right:solid 2px black; margin-right:5px; "><font color="#000000">11 </font></span>64634429<font color="#0000ff">,</font><font color="#cc0000">20</font><font color="#0000ff">,</font>40118<font color="#0000ff">,</font><font color="#cc0000">957</font><font color="#0000ff">,</font>1<font color="#0000ff">,</font><font color="#cc0000">3.99</font>
+<span style="background:#dbdbdb; border-right:solid 2px black; margin-right:5px; "><font color="#000000">12 </font></span>66624458<font color="#0000ff">,</font><font color="#cc0000">20</font><font color="#0000ff">,</font>40118<font color="#0000ff">,</font><font color="#cc0000">957</font><font color="#0000ff">,</font>1<font color="#0000ff">,</font><font color="#cc0000">0.89</font>
+<span style="background:#dbdbdb; border-right:solid 2px black; margin-right:5px; "><font color="#000000">13 </font></span>63674861<font color="#0000ff">,</font><font color="#cc0000">20</font><font color="#0000ff">,</font>40118<font color="#0000ff">,</font><font color="#cc0000">957</font><font color="#0000ff">,</font>10<font color="#0000ff">,</font><font color="#cc0000">2.70</font>
+</font></pre>
+<P>
+<P>
+<P>
+<HR><H2><A NAME="Header_2" HREF="#ToC_2" >MultiRecordCobol2Csv program</A></H2>
+<P>The <I>MultiRecordCobol2Csv</I> program is a replacement for the older Cobol2Csv.
+It it can  convert both single-record and Multi-Record Cobol files to Csv. Extra options include&#58;
+<P>
+<pre>
+<font color="blue">  <b>-addRecordName</b></font> : wether to add recordname to each row (<font color="blue">yes/no</font>)
+<font color="blue">  <b>-recordSelection</b></font> : define record selection e.g. <font color="blue">Record-Name Record-type=H</font>
+<font color="blue">  <b>-split</b></font> : COBOL Copybook Record split option:
+<b>        0</b> or <b>None</b>	: No Split
+<b>        2</b> or <b>01  </b>	: Split on 01 level
+<b>        1</b> or <b>redefine</b>	: Split on redefine
+<b>        4</b> or <b>Highest</b>	: On Highest Repeating level
+</pre>
+<P>
+<P>For multi record files you can&#58;
+<UL>
+ <P><LI>Just convert it to a Csv file.
+ <P><LI>Add the record name to each Csv record <B>addRecordName</B>
+ <P><LI>Write each record type to a separate file (include {record} in the output file name).
+</UL>
+<P>
+<P>
+<P>
+To run <I>MultiRecordCobol2Csv</I>&#58;
+<P>
+<PRE>java -jar ../lib/MultiRecordCobol2Csv.jar ^
+                   -C amsPoDownload.cbl  ^
+                   -I in/Ams_PODownload_20041231.txt  -O out/o_Colon_Ams_1.csv ^
+                   -Q DoubleQuote   -FS Text   -D : ^
+                   -addRecordName yes ^
+                   -split 01 ^
+                   -recordSelection PO-Record Record-Type=H1 ^
+                   -recordSelection Product-Record  Record-Type=D1 ^
+                   -recordSelection Location-Record Record-Type=S1
+</PRE><P>To write each record type to a separate file (please not the {record} in
+file name; this will be replaced with the Record-name)&#58;
+<P>
+<PRE>java -jar ../lib/MultiRecordCobol2Csv.jar ^
+                   -C amsPoDownload.cbl  ^
+                   -I in/Ams_PODownload_20041231.txt  -O out/o_comma_Ams_3_{record}.csv ^
+                   -Q DoubleQuote   -FS Text   -D , ^
+                   -addRecordName no ^
+                   -split 01 ^
+                   -recordSelection PO-Record Record-Type=H1 ^
+                   -recordSelection Product-Record  Record-Type=D1 ^
+                   -recordSelection Location-Record Record-Type=S1
+ 
+</PRE><P>There are several options for use with low/high values:
+<TABLE CELLPADDING="3">
+ <TR VALIGN="TOP"><TD><P><B>-reportInvalid</B></TD><TD><P> Report invalid fields (i.e. Low-Values / High-Values etc)
+ </TD></TR><TR VALIGN="TOP"><TD><P><B>-highValuesText</B></TD><TD><P> Text to display for High values
+ </TD></TR><TR VALIGN="TOP"><TD><P><B>-lowValuesText </B></TD><TD><P> Text to display for low values
+ </TD></TR><TR VALIGN="TOP"><TD><P><B>-numericSpacesText </B></TD><TD><P> Text to display for space in a numeric field
+</TD></TR></TABLE>
+<P>
+<P><H3><A NAME="Header_3" HREF="#ToC_3" >Java interface to MultiRecordCobol2Csv</A></H3>
+<P>MultiRecordCobol2Csv has a java (or Groovy etc) interface. The Java provides a few more options&#58;
+<UL COMPACT>
+ <LI>You can use Xml schema's and Define the Schema in Java as well as Cobol.
+ <LI>You can use BufferedWriter's for the output Csv/Csv's.
+</UL>
+<P>Example of Java interface&#58;
+<pre><font color="#000000"><span style="background:#dbdbdb; border-right:solid 2px black; margin-right:5px; "><font color="#990066"> 5 </font></span>        String poDownloadCobolFileName <font color="#000000"><strong>=</strong></font> Data.AMS_PO_COBOL_COPYBOOK_FILE_NAME;
+<span style="background:#dbdbdb; border-right:solid 2px black; margin-right:5px; "><font color="#000000"> 6 </font></span>        URL resource <font color="#000000"><strong>=</strong></font> Data.AMS_PO_DATA_RESOUCE;
+<span style="background:#dbdbdb; border-right:solid 2px black; margin-right:5px; "><font color="#000000"> 7 </font></span>        ICobolIOBuilder ioBldr <font color="#000000"><strong>=</strong></font> CobolToCsvBldr.<font color="#9966ff">newCobolIOBuilder</font><font color="#000000"><strong>(</strong></font>poDownloadCobolFileName<font color="#000000"><strong>)</strong></font>
+<span style="background:#dbdbdb; border-right:solid 2px black; margin-right:5px; "><font color="#000000"> 8 </font></span>                    .<font color="#9966ff">setFont</font><font color="#000000"><strong>(</strong></font>Conversion.DEFAULT_ASCII_CHARSET<font color="#000000"><strong>)</strong></font>
+<span style="background:#dbdbdb; border-right:solid 2px black; margin-right:5px; "><font color="#000000"> 9 </font></span>                    .<font color="#9966ff">setFileOrganization</font><font color="#000000"><strong>(</strong></font>Constants.IO_BIN_TEXT<font color="#000000"><strong>)</strong></font>
+<span style="background:#dbdbdb; border-right:solid 2px black; margin-right:5px; "><font color="#990066">10 </font></span>                    .<font color="#9966ff">setSplitCopybook</font><font color="#000000"><strong>(</strong></font>CopybookLoader.SPLIT_01_LEVEL<font color="#000000"><strong>)</strong></font>
+<span style="background:#dbdbdb; border-right:solid 2px black; margin-right:5px; "><font color="#000000">11 </font></span>                    .<font color="#9966ff">setRecordDecider</font><font color="#000000"><strong>(</strong></font>JRecordInterface1.RECORD_DECIDER_BUILDER.<font color="#9966ff">singleFieldDeciderBuilder</font><font color="#000000"><strong>(</strong></font><font color="#ff00cc">&quot;</font><font color="#ff00cc">Record</font><font color="#ff00cc">-</font><font color="#ff00cc">Type</font><font color="#ff00cc">&quot;</font>, <font color="#cc00cc">false</font><font color="#000000"><strong>)</strong></font>
+<span style="background:#dbdbdb; border-right:solid 2px black; margin-right:5px; "><font color="#000000">12 </font></span>                                    .<font color="#9966ff">addRecord</font><font color="#000000"><strong>(</strong></font><font color="#ff00cc">&quot;</font><font color="#ff00cc">H1</font><font color="#ff00cc">&quot;</font>, <font color="#ff00cc">&quot;</font><font color="#ff00cc">PO</font><font color="#ff00cc">-</font><font color="#ff00cc">Record</font><font color="#ff00cc">&quot;</font><font color="#000000"><strong>)</strong></font>
+<span style="background:#dbdbdb; border-right:solid 2px black; margin-right:5px; "><font color="#000000">13 </font></span>                                    .<font color="#9966ff">addRecord</font><font color="#000000"><strong>(</strong></font><font color="#ff00cc">&quot;</font><font color="#ff00cc">D1</font><font color="#ff00cc">&quot;</font>, <font color="#ff00cc">&quot;</font><font color="#ff00cc">Product</font><font color="#ff00cc">-</font><font color="#ff00cc">Record</font><font color="#ff00cc">&quot;</font><font color="#000000"><strong>)</strong></font>
+<span style="background:#dbdbdb; border-right:solid 2px black; margin-right:5px; "><font color="#000000">14 </font></span>                                    .<font color="#9966ff">addRecord</font><font color="#000000"><strong>(</strong></font><font color="#ff00cc">&quot;</font><font color="#ff00cc">S1</font><font color="#ff00cc">&quot;</font>, <font color="#ff00cc">&quot;</font><font color="#ff00cc">Location</font><font color="#ff00cc">-</font><font color="#ff00cc">Record</font><font color="#ff00cc">&quot;</font><font color="#000000"><strong>)</strong></font>
+<span style="background:#dbdbdb; border-right:solid 2px black; margin-right:5px; "><font color="#990066">15 </font></span>                                    .<font color="#9966ff">setCaseSensitive</font><font color="#000000"><strong>(</strong></font><font color="#cc00cc">false</font><font color="#000000"><strong>)</strong></font>
+<span style="background:#dbdbdb; border-right:solid 2px black; margin-right:5px; "><font color="#000000">16 </font></span>                                .<font color="#9966ff">build</font><font color="#000000"><strong>(</strong></font><font color="#000000"><strong>)</strong></font>
+<span style="background:#dbdbdb; border-right:solid 2px black; margin-right:5px; "><font color="#000000">17 </font></span>                    <font color="#000000"><strong>)</strong></font>;
+<span style="background:#dbdbdb; border-right:solid 2px black; margin-right:5px; "><font color="#000000">18 </font></span>
+<span style="background:#dbdbdb; border-right:solid 2px black; margin-right:5px; "><font color="#000000">19 </font></span>        CobolToCsvBldr.<font color="#9966ff">newMultiRecordCsvBuilder</font><font color="#000000"><strong>(</strong></font><font color="#000000"><strong>)</strong></font>
+<span style="background:#dbdbdb; border-right:solid 2px black; margin-right:5px; "><font color="#990066">20 </font></span>                    .<font color="#9966ff">setCsvHeader</font><font color="#000000"><strong>(</strong></font><font color="#cc00cc">true</font><font color="#000000"><strong>)</strong></font>
+<span style="background:#dbdbdb; border-right:solid 2px black; margin-right:5px; "><font color="#000000">21 </font></span>                    .<font color="#9966ff">setSeparator</font><font color="#000000"><strong>(</strong></font><font color="#ff00cc">&quot;</font><font color="#ff00cc">;</font><font color="#ff00cc">&quot;</font><font color="#000000"><strong>)</strong></font>
+<span style="background:#dbdbdb; border-right:solid 2px black; margin-right:5px; "><font color="#000000">22 </font></span>                    .<font color="#9966ff">setLineReader</font><font color="#000000"><strong>(</strong></font>ioBldr.<font color="#9966ff">newReader</font><font color="#000000"><strong>(</strong></font>resource.<font color="#9966ff">openStream</font><font color="#000000"><strong>(</strong></font><font color="#000000"><strong>)</strong></font><font color="#000000"><strong>)</strong></font><font color="#000000"><strong>)</strong></font>
+<span style="background:#dbdbdb; border-right:solid 2px black; margin-right:5px; "><font color="#000000">23 </font></span>                    .<font color="#9966ff">setOutputFile</font><font color="#000000"><strong>(</strong></font><font color="#ff00cc">&quot;</font><font color="#ff00cc">/</font><font color="#ff00cc">home</font><font color="#ff00cc">/</font><font color="#ff00cc">bruce</font><font color="#ff00cc">/</font><font color="#ff00cc">work</font><font color="#ff00cc">/</font><font color="#ff00cc">temp</font><font color="#ff00cc">/</font><font color="#ff00cc">semiAmsPo_1</font><font color="#ff00cc">.</font><font color="#ff00cc">csv</font><font color="#ff00cc">&quot;</font><font color="#000000"><strong>)</strong></font>
+<span style="background:#dbdbdb; border-right:solid 2px black; margin-right:5px; "><font color="#000000">24 </font></span>                .<font color="#9966ff">run</font><font color="#000000"><strong>(</strong></font><font color="#000000"><strong>)</strong></font>;
+<span style="background:#dbdbdb; border-right:solid 2px black; margin-right:5px; "><font color="#990066">25 </font></span>
+</font></pre>
+<P>
+<P>Other options include
+<P>
+<pre><font color="#000000"><span style="background:#dbdbdb; border-right:solid 2px black; margin-right:5px; "><font color="#000000">2 </font></span>    ICobolToCsvBldr <font color="#9966ff">setNumericSpacesTxt</font><font color="#000000"><strong>(</strong></font>String numericSpaces<font color="#000000"><strong>)</strong></font>;
+<span style="background:#dbdbdb; border-right:solid 2px black; margin-right:5px; "><font color="#000000">3 </font></span>    ICobolToCsvBldr <font color="#9966ff">setHighValueTxt</font><font color="#000000"><strong>(</strong></font>String highValueTxt<font color="#000000"><strong>)</strong></font>;
+<span style="background:#dbdbdb; border-right:solid 2px black; margin-right:5px; "><font color="#000000">4 </font></span>    ICobolToCsvBldr <font color="#9966ff">setLowValueTxt</font><font color="#000000"><strong>(</strong></font>String lowValueTxt<font color="#000000"><strong>)</strong></font>;
+<span style="background:#dbdbdb; border-right:solid 2px black; margin-right:5px; "><font color="#990066">5 </font></span>    ICobolToCsvBldr <font color="#9966ff">setReportInvalidFields</font><font color="#000000"><strong>(</strong></font><font color="#0099ff"><strong>boolean</strong></font> reportInvalidFields<font color="#000000"><strong>)</strong></font>;
+</font></pre>
+<P>
+<HR><H2><A NAME="Header_4" HREF="#ToC_4" >Alternative Cobol Conversion options</A></H2>
+<P>There are a number of alternatives to Converting Cobol Files to/from Csv.
+<P>
+<UL COMPACT>
+ <LI><a href="https://sourceforge.net/projects/coboltoxml">CobolToXml</a> -
+use the sister project to convert your Cobol files to/from Xml.
+ <LI>You could use <a href="https://sourceforge.net/projects/jrecord">JRecord</a> -
+to do the conversions. Also the JRecord CodeGen utility could prove useful
+ <LI>If there is the interest, I may write CobolToJson and CobolToAvro utilities.
+</UL>
+<P>
+<HR><H2><A NAME="Header_5" HREF="#ToC_5" >Cobol to Csv Options</A></H2>
+<P>If you have <font color="blue"><b>simple COBOL files</b></font> (one record type and no duplicate field names),
+you can use <B>Cobol2Csv</B> and <B>Csv2Cobol</B> programs. These programs
+will convert a single record cobol file to / from a CSV file. If you pro
+The big advantages are&#58;
+<UL COMPACT>
+ <LI>No programming is involved.
+ <LI>You keep your code base clear of <I>Cobol</I>, you just using existing Csv Skills / packages.
+ <LI>Can use other languages (other than java) or load into a DB.
+</UL>
+<P>
+It make sense to use <B>Cobol2Csv</B> and <B>Csv2Cobol</B> if
+<OL COMPACT TYPE=1>
+ <LI>Files are <font color="blue"><b>Simple</b></font> one record files with <B>no duplicate</B> field names.
+ <LI>You are <B>not going to process the files in Java</B> (i.e. plan to process the files in a language other than java
+ or you are going to directly load the files into a database).
+ <LI>Your organisation already uses a package other than JRecord to read CSV files.
+ <LI>You want your business application clear of **Cobol** references.
+</OL>
+<P>
+<P>
+<P><B>Note: </B>It makes less sense to convert the files to CSV if
+<UL COMPACT>
+ <LI>You use JRecord to read / write the CSV files.
+You might as well just read / write the raw Cobol files with JRecord.
+ <LI>If you do not use an existing CSV package, you might as well just learn JRecord.
+</UL>
+<BR>
+<BR>
+<P>
+<B>Cobol2Csv examples&#58;</B>
+<PRE>
+&nbsp;&nbsp;&nbsp;<font color="blue">Basically to call Cobol2Csv / Csv2Cobol</font>
+     java -jar Cobol2Csv &lt;program arguments&gt;
+ 
+     java -jar Csv2Cobol &lt;program arguments&gt;
+ 
+&nbsp;&nbsp;&nbsp;<font color="blue">or</font>
+ 
+     Cobol2Csv.bat/sh &lt;program arguments&gt;
+ 
+     Csv2Cobol.bat/sh &lt;program arguments&gt;
+ 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;------------------------------------------------------------------------------</font>
+ 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">Copy a fixed length Mainframe file to a Tab delimited File </font>
+     java -jar ../lib/Cobol2Csv.jar \
+                  -C DTAR020.cbl  -FS Fixed_Length    -IC CP037 \
+                  -Q DoubleQuote  -D tab \
+                  -I in/DTAR020.bin  -O out/o_DTAR020_a.csv
+ 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">Copy a Line-Sequential (ordinary Text) file to a : delimited File
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;with _'s instead of -'s in the column names </font>
+     java -jar ../lib/Cobol2Csv.jar  -C Test2.cbl  -FS Text \
+                  -D : -Rename Change_Minus_To_Undescore \
+                  -I in/Test2.txt  -O out/o_Test2-rb.csv
+ 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue">Convert a <i>Csv</i> file back into a <i>Fixed Width Mainframe Cobol Data</i> file</font>
+     java -jar ../lib/Csv2Cobol.jar ^
+                               -C G:/Users/Bruce01/RecordEditor_HSQL/Copybook/Cobol/DTAR020.cbl ^
+                               -Delimiter , ^
+                               -OFS Fixed_Length ^
+                               -OC cp037 ^
+                               -I out/DTAR020.bin.csv ^
+                               -O out/DTAR020.fromCsv.bin
+ 
+</PRE><P><P><B>Cobol2Csv, Csv2Cobol program arguments&#58; </B>
+<P>
+<p></p><pre>
+<font color="blue">  <b>-I </b></font> or <font color="blue"><b>-InputFile </b></font>          : Input file
+<font color="blue">  <b>-O </b></font> or <font color="blue"><b>-OutputFile</b></font>          : Output file
+<font color="blue">  <b>-C </b></font> or <font color="blue"><b>-Copybook</b></font>            : Cobol Copybook file
+<font color="blue">  <b>-D </b></font> or <font color="blue"><b>-Delimiter </b></font>          : Field Seperator (space, tab or value)
+<font color="blue">  <b>-Q </b></font> or <font color="blue"><b>-Quote </b></font>              : Quote, you can use DoubleQuote SingleQuote as well as an a the char
+<font color="blue">  <b>-IC</b></font> or <font color="blue"><b>-InputCharacterSet</b></font>   : Input  font or character set
+<font color="blue">  <b>-OC</b></font> or <font color="blue"><b>-OutputCharacterSet</b></font>  : Output font or character set
+<font color="blue">  <b>-IFS</b></font> or <font color="blue"><b>-InputFileStructure</b></font> : Input File Structure:
+<font color="blue">  <b>-OFS</b></font> or <font color="blue"><b>-OutputFileStructure</b></font>: Output File Structure:
+<b>      Default      </b>: Determine by Copybook
+<b>      Text         </b>: Use Standard Text IO
+<b>      Fixed_Length </b>: Fixed record Length binary
+<b>      Mainframe_VB </b>: Mainframe VB File
+<b>      Mainframe_VB_As_RECFMU</b> : Mainframe VB File including BDW (block descriptor word)
+<b>      FUJITSU_VB   </b>: Fujitsu Cobol VB File
+<b>      Open_Cobol_VB</b>: Gnu Cobol VB File
+<font color="blue">  <b>-Dialect</b></font> : Cobol Dialect
+<b>      0</b> or <b>Intel</b>        : Intel little endian
+<b>      1</b> or <b>Mainframe</b>    : Mainframe big endian (Default)
+<b>      4</b> or <b>Open_Cobol_Little_Endian_(Intel)</b>  : Gnu:Cobol 
+<b>      2</b> or <b>Fujitsu</b>      : Fujitsu Cobol
+<font color="blue">  <b>-Rename</b></font>         : How to update cobol variable names
+<b>      0</b> or <b>Leave_Asis</b>                : Use the COBOL name
+<b>      1</b> or <b>Change_Minus_To_Underscore</b>: Change '-(),' to '_'
+<b>      2</b> or <b>Drop_Minus</b>                : Drop minus ('-') from the name
+<font color="blue">  <b>-CsvParser</b></font> : Controls how Csv fields are written / parsed
+<b>      0</b> or <b>Basic_Parser</b>                          : Parse Csv - when a field starts with " look for "&lt;FieldSeparator&gt;or "&lt;eol&amp;gt
+<b>      1</b> or <b>Standard_Parser</b>                       : Parse CSV matching Quotes
+<b>      2</b> or <b>Standard_Parse_Quote_4_Char_Fields</b>    : Standard Parser, add Quotes to all Char fields
+<b>      3</b> or <b>Basic_Parser_Column_names_in_quotes</b>   : Basic Parser, Field (Column) names in Quotes
+<b>      4</b> or <b>Standard_Parser_Column_names_in_quotes</b>: Standard Parser, Field (Column) names in Quotes
+<b>      5</b> or <b>Standard_Parser_Quote_4_Char_Fields_Column_names_in_quotes</b>        : Standard Parser, Char fields in Quotes,  Field (Column) names in Quotes
+<b>      6</b> or <b>Basic_Parser_Delimiter_all_fields</b>     : Basic Parser, Field Separator for all fields
+<b>      7</b> or <b>Basic_Parser_Delimiter_all_fields+1</b>   : Basic Parser, Field Separator for all fields + extra seperator at the End-of-Line<p></p>
+</pre>
+<P>
+<HR><H2><A NAME="Header_6" HREF="#ToC_6" >RecordEditor</A></H2>
+<P>
+<P>The <a href="http://record-editor.sourceforge.net" TARGET="_top">RecordEditor</a> is usefull for CobolToXml users because
+<UL COMPACT>
+ <LI>The <a href="http://record-editor.sourceforge.net" TARGET="_top">RecordEditor</a> can <B>edit</B> <I>Cobol Data</I> files using a <I>Cobol Copybook</I>
+ <LI>In version 0.98 (or later) of the <a href="http://record-editor.sourceforge.net" TARGET="_top">RecordEditor</a> there is a <B>Code Generation</B> utility that will&#58;
+ <UL COMPACT>
+    <LI>Analyze a Cobol Copybook / Cobol Data Filed
+    <LI>Generate Bat/Shell-Script/Java-Script scripts to Convert <I>Cobol Data</I> files to/from <I>Csv</I> files using <B>CobolToCsv</B> jars.
+ </UL>
+</UL>
+<P>
+<P>
+<P><H3><A NAME="Header_7" HREF="#ToC_7" >Starting RecordEditor's Code Generation</A></H3>
+<P>In the <a href="http://record-editor.sourceforge.net" TARGET="_top">RecordEditor</a> select the <B>Generate &gt;&gt;&gt; Java JRecord Code for Cobol</B>
+<P>
+<img SRC="Diagram/CobolGen01.png">
+<P>
+<P>On the next screen you enter the <B>Cobol Copybook</B> and the sample <B>Cobol Data file</B>
+<P>
+<img SRC="Diagram/CobolGen02.png">
+<P>
+<P>Make sure you specify the correct <B>Cobol dialect</B>. The <a href="http://record-editor.sourceforge.net" TARGET="_top">RecordEditor</a> will try
+and figure out the file attributes and display the file on the Right-Hand-side of the screen.
+Update the attributes as need to display the file correctly.
+<P>When you are satisfied the attributes are corect then select the
+<B>Generate &gt;&gt;&gt;&gt; Cobol &lt;=&gt; Csv &gt;&gt;&gt; ***</B> drop down menu option.
+<P>
+<img SRC="Diagram/CsvGen03.png">
+<P>
+<P>The destination screen should be displayed next&#58;
+<P>
+<img SRC="Diagram/CsvGen04.png">
+<P>
+<P>Select <B>Generate Code</B> and the generated code will be displayed&#58;
+<P>
+<img SRC="Diagram/CsvGen05.png">
+<P>
+<P><H3><A NAME="Header_8" HREF="#ToC_8" >RecordEdit Summary</A></H3>
+<P>The <a href="http://record-editor.sourceforge.net" TARGET="_top">RecordEditor</a> lets you generate <B>Cobol2Csv</B> scripts using Gui Screens.
+There is more details on the <B>Generate</B> function
+<a href="http://record-editor.sourceforge.net/RecordEditorGenerate.htm">here</a>.
+<P>
+<A NAME="Bot_Of_Page"></A>
+</BODY></HTML>

@@ -1,0 +1,13 @@
+{"Command": "Extract Data",
+ "Date Format": "ddmmyyyy",
+  "Holding Name": "", 
+  "Copy Book File": "/Users/apple/Downloads/vsam_ip_op/test1_copybook copy.cob", 
+  "Data File Path": "/Users/apple/Downloads/vsam_ip_op/test1_data copy.txt",
+   "Database Server": "None",
+    "Output File Format": "xml",
+     "IA Application Name": "", 
+     "Extraction column list": "[\"DATE_OF_BIRTH\",\"START_DATE\",\"END_DATE\"]", 
+     "Archon_Installation_Path": "/Users/apple/Documents/Archon2/Archon", 
+     "Maximum Parallel Process": 3,
+      "SIP file split size (in MB)": 100
+      }

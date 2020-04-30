@@ -1,0 +1,48 @@
+.im TagDefs.dcf
+.dm relink on
+.*B2H html <P>&nbsp;<p>
+.*B2H html <TABLE width="100%"><tr>
+.*B2H html <td width="34%" id=dark><a id=dark href="http://sourceforge.net/projects/coboltocsv/">CobolToCsv at SourceForge</a></td>
+.*B2H html <td width="33%" id=dark><a id=dark href="http://sourceforge.net/projects/coboltocsv/files/">Download Page</a></td>
+.*B2H html <td id=dark><a id=dark href="http://sourceforge.net/projects/coboltocsv/forums">Forums</a></td>
+.*B2H html </tr></TABLE>
+.dm off
+.*B2H SYMBOL :tag. rlink   IT=N VAT=N ATT=N SE=N V='.relink'
+
+:h2.Cobol To Csv
+.im cbl2csv_intro.dcf
+:rlink.
+:h2.Parameters
+.im cbl2csv_programOptions.dcf
+:rlink.
+
+:h2.Examples
+.im cbl2csv_examples.dcf
+:rlink.
+
+:h2.RecordEditor
+.im cbl2csv_RecordEditor.dcf
+:rlink.
+
+:h2.Related
+:p.Projects related to  :hp2.Cobol to Csv:ehp2. include&gml.
+:ul compact.
+ :li.:cb2xml. - Used for Cobol Copybook analysis by the CobolToCsv project.
+ :li.:JRecord. - Used for  Cobol-IO (using a Cobol Copybook) by the CobolToCsv project.
+ :li.:RecordEditor. - can edit Cobol-Data files and generate CobolToCsv scripts.
+:eul.
+
+:h3.Other Options
+:p.While CobolToCsv works well for simple single record files, there are better
+alternatives for more complicated files&gml.
+
+:ul compact.
+ :li.:CobolToXml. - 
+use the sister project to convert your Cobol files to/from Xml. :CobolToXml. 
+can handle simple single/multi-record-type files.
+ :li.A Cobol2Json program will be in version 0.81.1 of :JRecord. 
+ :li.You can do your own :JRecord. programming (with the help of the CodeGen utility). 
+ :li.It should be possible to do other :hp1.generic data conversions:ehp1. e.g. Cobol ==>> Avro.
+:eul.
+
+:rlink.

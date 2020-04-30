@@ -1,0 +1,10 @@
+
+VSAM Question:
+
+  
+  1)List of Data Type:
+                a)Date and time
+                b)Blob Clob
+  2)Two table:(One values for both First Type and Second Type)
+  3)How many different table definition of data in single copy book.
+  4)can u send  different types of copy book and data files

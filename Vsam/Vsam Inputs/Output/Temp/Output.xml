@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<copybook filename="COPYBOOK.txt" dialect="Mainframe" cb2xml-format="2017">
+    <item level="01" name="CATALOG" position="1" storage-length="60" display-length="60" display-position="1">
+        <item level="05" name="ITEM-REF" picture="9(4)" position="1" storage-length="4" display-length="4" numeric="COBOL_NUMERIC" display-position="1"/>
+        <item level="05" name="DESCRIPTION" picture="X(40)" position="5" storage-length="40" display-length="40" display-position="5"/>
+        <item level="05" name="DEPARTMENT" picture="9(3)" position="45" storage-length="3" display-length="3" numeric="COBOL_NUMERIC" display-position="45"/>
+        <item level="05" name="COST" picture="X(6)" position="48" storage-length="6" display-length="6" display-position="48"/>
+        <item level="05" name="IN-STOCK" picture="9(4)" position="54" storage-length="4" display-length="4" numeric="COBOL_NUMERIC" display-position="54"/>
+        <item level="05" name="ON-ORDER" picture="9(3)" position="58" storage-length="3" display-length="3" numeric="COBOL_NUMERIC" display-position="58"/>
+    </item>
+</copybook>
