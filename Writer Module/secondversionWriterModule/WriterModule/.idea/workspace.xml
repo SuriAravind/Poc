@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="815d9b06-1d6a-4d76-846f-4721c5d313dd" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="$APPLICATION_HOME_DIR$/plugins/maven/lib/maven3" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+        <option name="jdkForImporter" value="11" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="1" />
+  </component>
+  <component name="ProjectId" id="1Tjr538TMqEAmyMM9dHw52QRYTj" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/pom.xml" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="test.writeOperation" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="test.beans" />
+    </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="test.writeOperation" />
+      <recent name="test.options" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/test/utility" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="testProgram" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="test.testProgram" />
+      <module name="WriterModule" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.testProgram" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="815d9b06-1d6a-4d76-846f-4721c5d313dd" name="Default Changelist" comment="" />
+      <created>1573984158831</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1573984158831</updated>
+      <workItem from="1573984160177" duration="8638000" />
+      <workItem from="1574416044697" duration="7656000" />
+      <workItem from="1582958222053" duration="687000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="569" y="335" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1582958262296">
+      <screen x="0" y="23" width="1440" height="833" />
+    </state>
+    <state x="569" y="335" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.23.1440.833@0.23.1440.833" timestamp="1582958262296" />
+    <state x="396" y="104" key="#testProgram" timestamp="1582958287225">
+      <screen x="0" y="23" width="1440" height="833" />
+    </state>
+    <state x="396" y="104" key="#testProgram/0.23.1440.833@0.23.1440.833" timestamp="1582958287225" />
+    <state width="1398" height="220" key="GridCell.Tab.0.bottom" timestamp="1582958929252">
+      <screen x="0" y="23" width="1440" height="833" />
+    </state>
+    <state width="1398" height="220" key="GridCell.Tab.0.bottom/0.23.1440.833@0.23.1440.833" timestamp="1582958929252" />
+    <state width="1398" height="220" key="GridCell.Tab.0.center" timestamp="1582958929252">
+      <screen x="0" y="23" width="1440" height="833" />
+    </state>
+    <state width="1398" height="220" key="GridCell.Tab.0.center/0.23.1440.833@0.23.1440.833" timestamp="1582958929252" />
+    <state width="1398" height="220" key="GridCell.Tab.0.left" timestamp="1582958929251">
+      <screen x="0" y="23" width="1440" height="833" />
+    </state>
+    <state width="1398" height="220" key="GridCell.Tab.0.left/0.23.1440.833@0.23.1440.833" timestamp="1582958929251" />
+    <state width="1398" height="220" key="GridCell.Tab.0.right" timestamp="1582958929252">
+      <screen x="0" y="23" width="1440" height="833" />
+    </state>
+    <state width="1398" height="220" key="GridCell.Tab.0.right/0.23.1440.833@0.23.1440.833" timestamp="1582958929252" />
+    <state width="1398" height="258" key="GridCell.Tab.1.bottom" timestamp="1582958536508">
+      <screen x="0" y="23" width="1440" height="833" />
+    </state>
+    <state width="1398" height="258" key="GridCell.Tab.1.bottom/0.23.1440.833@0.23.1440.833" timestamp="1582958536508" />
+    <state width="1398" height="258" key="GridCell.Tab.1.center" timestamp="1582958536508">
+      <screen x="0" y="23" width="1440" height="833" />
+    </state>
+    <state width="1398" height="258" key="GridCell.Tab.1.center/0.23.1440.833@0.23.1440.833" timestamp="1582958536508" />
+    <state width="1398" height="258" key="GridCell.Tab.1.left" timestamp="1582958536507">
+      <screen x="0" y="23" width="1440" height="833" />
+    </state>
+    <state width="1398" height="258" key="GridCell.Tab.1.left/0.23.1440.833@0.23.1440.833" timestamp="1582958536507" />
+    <state width="1398" height="258" key="GridCell.Tab.1.right" timestamp="1582958536508">
+      <screen x="0" y="23" width="1440" height="833" />
+    </state>
+    <state width="1398" height="258" key="GridCell.Tab.1.right/0.23.1440.833@0.23.1440.833" timestamp="1582958536508" />
+    <state x="301" y="164" width="837" height="550" key="find.popup" timestamp="1582959025016">
+      <screen x="0" y="23" width="1440" height="833" />
+    </state>
+    <state x="301" y="164" width="837" height="550" key="find.popup/0.23.1440.833@0.23.1440.833" timestamp="1582959025016" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/test/formattingHelper/BaseTextFormattingHelper.java</url>
+          <line>184</line>
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/test/testProgram.java</url>
+          <line>44</line>
+          <properties class="test.testProgram" method="SipExample">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
