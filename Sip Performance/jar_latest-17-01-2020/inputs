@@ -1,0 +1,1 @@
+-h 66.186.183.111 -d PMS043 -s PMS043 -u PMS043 -ot sip -pw PMS123 -ds as400noport -o "/Users/apple/Documents/malik/output" -p 0 -ert -sip /Users/apple/Documents/malik/inputs/file.json -sps 100 -tc 20 -swt -25 -ex -rc -wt 1000
