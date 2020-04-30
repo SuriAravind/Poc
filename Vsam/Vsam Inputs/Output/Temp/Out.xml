@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<copybook filename="sample.cbl" dialect="Mainframe" cb2xml-format="2017">
+    <item level="01" name="P3-Emp" position="1" storage-length="43" display-length="43" display-position="1">
+        <item level="03" name="First-name" picture="x(9)" position="1" storage-length="9" display-length="9" display-position="1"/>
+        <item level="03" name="last-name" picture="X(10)" position="10" storage-length="10" display-length="10" display-position="10"/>
+        <item level="03" name="Age" picture="9(3)" position="20" storage-length="3" display-length="3" numeric="COBOL_NUMERIC" display-position="20"/>
+        <item level="03" name="Gender" picture="X(6)" position="23" storage-length="6" display-length="6" display-position="23"/>
+        <item level="03" name="Place" picture="X(15)" position="29" storage-length="15" display-length="15" display-position="29"/>
+    </item>
+</copybook>

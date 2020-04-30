@@ -1,0 +1,47 @@
+<body>
+<h2>ReadMe - CobolToXml</h2>
+<p>This project will convert single-record-type <i>Cobol Data</i> files
+to/from <i>Xml</i> Files. 
+
+<p>Project documentation is available <a href="Cobol2Xml_Documentation.htm">here</a>.
+
+<p>The CobolToXml project depends on:</p>
+<ul compact="">
+ <li>
+<a href="https://sourceforge.net/projects/cb2xml">cb2xml</a> -
+Converts a Cobol Copybook to Xml.
+ </li><li>
+<a href="https://sourceforge.net/projects/jrecord">JRecord</a> -
+Read/Write Cobol data files using a Cobol Copybook in Java. 
+</li></ul>
+<h2>Changes</h2>
+<h3>Version 0.81.4a</h3>
+<ul>
+ <li>Added support for formating the output (in particular adding +(or -) 
+to all numerics. A new option <b> -formatText usePlus</b> has been added.</li>
+</ul>
+
+<h3>Version 0.81.5</h3>
+<ul>
+ <li>Pickup JRecord 0.81.5
+</ul>
+<h3>Version 0.81.4</h3>
+<ul>
+ <li>Fix for Complex Occurs Depending</li>
+ <li>Add pom files</li>
+</ul>
+<h3>Version 0.81.3</h3>
+<ul>
+<li>Changes to work with JRecord 0.81.3</li>
+<li>Support for complex Occurs Depending (size fields nested in arrays) like:
+<pre><font color="#000000"><span style="background:#dbdbdb; border-right:solid 2px black; margin-right:5px; "><font color="#000000">4 </font></span><font color="#cc6600"> </font><font color="#cc6600"> </font><font color="#cc6600"> </font><font color="#cc6600"> </font><font color="#cc6600"> </font><font color="#cc6600"> </font><font color="#cc6600"> </font>        <font color="#ff0000">03</font>  size-1                <font color="#006699"><strong>pic</strong></font> s9(<font color="#ff0000">4</font>).
+<span style="background:#dbdbdb; border-right:solid 2px black; margin-right:5px; "><font color="#990066">5 </font></span><font color="#cc6600"> </font><font color="#cc6600"> </font><font color="#cc6600"> </font><font color="#cc6600"> </font><font color="#cc6600"> </font><font color="#cc6600"> </font><font color="#cc6600"> </font>        <font color="#ff0000">03</font>  <font color="#006699"><strong>occurs</strong></font> <font color="#ff0000">1</font> <font color="#006699"><strong>to</strong></font> <font color="#ff0000">20</font> <font color="#006699"><strong>times</strong></font> <font color="#006699"><strong>depending</strong></font> <font color="#006699"><strong>on</strong></font> size-1.
+<span style="background:#dbdbdb; border-right:solid 2px black; margin-right:5px; "><font color="#000000">6 </font></span><font color="#cc6600"> </font><font color="#cc6600"> </font><font color="#cc6600"> </font><font color="#cc6600"> </font><font color="#cc6600"> </font><font color="#cc6600"> </font><font color="#cc6600"> </font>            <font color="#ff0000">05</font>  size-11           <font color="#006699"><strong>pic</strong></font> s9(<font color="#ff0000">4</font>).
+<span style="background:#dbdbdb; border-right:solid 2px black; margin-right:5px; "><font color="#000000">7 </font></span><font color="#cc6600"> </font><font color="#cc6600"> </font><font color="#cc6600"> </font><font color="#cc6600"> </font><font color="#cc6600"> </font><font color="#cc6600"> </font><font color="#cc6600"> </font>            <font color="#ff0000">05</font>  <font color="#006699"><strong>occurs</strong></font> <font color="#ff0000">1</font> <font color="#006699"><strong>to</strong></font> <font color="#ff0000">20</font> <font color="#006699"><strong>times</strong></font> <font color="#006699"><strong>depending</strong></font> <font color="#006699"><strong>on</strong></font> size-11.
+</font></pre> 
+</li>
+</ul>
+
+<h3>Version 0.81.1</h3>
+<p>Initial release, It has been split from the <a href="https://sourceforge.net/projects/jrecord">JRecord</a>
+project.

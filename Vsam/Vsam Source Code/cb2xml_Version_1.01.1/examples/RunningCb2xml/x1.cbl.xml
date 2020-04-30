@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<copybook filename="x1.cbl" dialect="Mainframe" cb2xml-format="2017">
+    <item level="03" name="f1"        picture="x(3)"                             position="1" storage-length="3" display-length="3"/>
+    <item level="03" name="f2-comp"   picture="s9(4)"    usage="computational"   position="4" storage-length="2" display-length="4"           numeric="COBOL_NUMERIC"/>
+    <item level="03" name="f3-comp-3" picture="s9(6)V99" usage="computational-3" position="6" storage-length="5" display-length="8" scale="2" numeric="COBOL_NUMERIC"/>
+</copybook>

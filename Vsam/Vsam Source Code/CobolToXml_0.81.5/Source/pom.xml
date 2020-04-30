@@ -1,0 +1,41 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>net.sf</groupId>
+    <artifactId>cobolToXml</artifactId>
+    <version>0.81.4</version>
+    <packaging>pom</packaging>
+
+    <properties>
+        <cobolToXml_srcdir>cobolToXml</cobolToXml_srcdir>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-resources-plugin</artifactId>
+            <version>2.5</version>
+            <type>maven-plugin</type>
+        </dependency>
+        <dependency>
+            <groupId>commons-lang</groupId>
+            <artifactId>commons-lang</artifactId>
+            <version>2.6</version>
+        </dependency>
+        <dependency>
+            <groupId>net.sf</groupId>
+            <artifactId>cb2xml_src</artifactId>
+            <version>0.95.8</version>
+        </dependency>
+        <dependency>
+            <groupId>net.sf</groupId>
+            <artifactId>jrecord-base</artifactId>
+            <version>0.81.4</version>
+        </dependency>
+    </dependencies>
+
+    <modules>
+        <module>${cobolToXml_srcdir}</module>
+    </modules>
+
+</project>

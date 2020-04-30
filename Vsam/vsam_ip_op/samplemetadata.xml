@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<copybook filename="test1_copybook.cob" dialect="Mainframe" cb2xml-format="2017">
+    <!--******************************************************************-->
+    <!--*-->
+    <!--* Copyright 2018 ABSA Group Limited-->
+    <!--*-->
+    <!--* Licensed under the Apache License, Version 2.0 (the "License");-->
+    <!--* you may not use this file except in compliance with the License.-->
+    <!--* You may obtain a copy of the License at-->
+    <!--*-->
+    <!--*     http://www.apache.org /licenses/LICENSE-2.0-->
+    <!--*-->
+    <!--* Unless required by applicable law or agreed to in writing, softw-->
+    <!--* distributed under the License is distributed on an "AS IS" BASIS-->
+    <!--* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or-->
+    <!--* See the License for the specific language governing permissions-->
+    <!--* limitations under the License.-->
+    <!--*-->
+    <!--******************************************************************-->
+    <item level="01" name="RECORD" position="1" storage-length="150" display-length="163" display-position="1">
+        <item level="05" name="ID" picture="S9(4)" usage="computational" position="1" storage-length="2" display-length="4" numeric="COBOL_NUMERIC" display-position="1"/>
+        <item level="05" name="COMPANY" position="3" storage-length="13" display-length="15" display-position="5">
+            <item level="10" name="SHORT-NAME" picture="X(10)" position="3" storage-length="10" display-length="10" display-position="5"/>
+            <item level="10" name="COMPANY-ID-NUM" picture="9(5)" usage="computational-3" position="13" storage-length="3" display-length="5" numeric="COBOL_NUMERIC" display-position="15" redefined="true"/>
+            <item level="10" name="COMPANY-ID-STR" picture="X(3)" position="13" storage-length="3" display-length="3" display-position="15" redefines="COMPANY-ID-NUM"/>
+        </item>
+        <item level="05" name="METADATA" position="16" storage-length="135" display-length="144" display-position="20">
+            <item level="10" name="CLIENTID" picture="X(15)" position="16" storage-length="15" display-length="15" display-position="20"/>
+            <item level="10" name="REGISTRATION-NUM" picture="X(10)" position="31" storage-length="10" display-length="10" display-position="35"/>
+            <item level="10" name="NUMBER-OF-ACCTS" picture="9(03)" usage="computational-3" position="41" storage-length="2" display-length="3" numeric="COBOL_NUMERIC" display-position="45"/>
+            <item level="10" name="ACCOUNT" position="43" storage-length="108" display-length="116" display-position="48">
+                <item level="12" name="ACCOUNT-DETAIL" occurs="4" depending-on="NUMBER-OF-ACCTS" position="43" storage-length="27" display-length="29" display-position="48">
+                    <item level="15" name="ACCOUNT-NUMBER" picture="X(24)" position="43" storage-length="24" display-length="24" display-position="48"/>
+                    <item level="15" name="ACCOUNT-TYPE-N" picture="9(5)" usage="computational-3" position="67" storage-length="3" display-length="5" numeric="COBOL_NUMERIC" display-position="72" redefined="true"/>
+                    <item level="15" name="ACCOUNT-TYPE-X" picture="X(3)" position="67" storage-length="3" display-length="3" display-position="72" redefines="ACCOUNT-TYPE-N"/>
+                </item>
+            </item>
+        </item>
+    </item>
+</copybook>

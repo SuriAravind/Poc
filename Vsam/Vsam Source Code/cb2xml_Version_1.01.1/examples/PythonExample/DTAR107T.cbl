@@ -1,0 +1,14 @@
+           05 DTAR107-STORE-NO-T                 PIC -9(3).
+           05 DTAR107-STORE-NO-REDEF-T           PIC X(2).
+           05 DTAR107-TRANS-DATE-T               PIC -9(6).
+           05 DTAR107-CUST-NO-T                  PIC 9(16).
+           05 DTAR107-AMOUNT-T                   PIC -9(7).9(2).
+           05 DTAR107-OPERATOR-NO-T              PIC -9(8).
+           05 DTAR107-TERMINAL-NO-T              PIC -9(3).
+           05 DTAR107-TIME-T                     PIC -9(4).
+           05 DTAR107-TRANS-NO-T                 PIC -9(4).
+           05 DTAR107-TRANS-TYPE-T               PIC 9(2).
+           05 DTAR107-TRANS-CODE-T               PIC 9(2).
+           05 DTAR107-STD-POINTS-T               PIC -9(6).
+           05 DTAR107-BONUS-POINTS-T             PIC -9(6).
+           05 DTAR107-NO-OF-TXNS-T               PIC 9(2).

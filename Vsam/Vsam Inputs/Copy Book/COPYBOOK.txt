@@ -1,0 +1,7 @@
+       01 CATALOG.
+          05 ITEM-REF          PIC 9(4).
+          05 DESCRIPTION       PIC X(40).
+          05 DEPARTMENT        PIC 9(3).
+          05 COST              PIC X(6).
+          05 IN-STOCK          PIC 9(4).
+          05 ON-ORDER          PIC 9(3).

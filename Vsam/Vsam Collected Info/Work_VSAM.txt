@@ -1,0 +1,18 @@
+
+Work
+
+1)Copy Book to xml(understand and recreation).
+
+  03 Location-details.
+          05 Location-Number  Pic 9(4).
+          05 Location-Type    Pic XX.
+          05 Location-Name    Pic X(35).
+   
+2)Poc project for VSAM Extraction.
+3)Combine both project..(extraction project).
+4)Data Type Identification(4 data types). and find how many data types available in copy book
+5)Metadata Generation instead of cb2xml jar
+6)Based on datatype infoarchive date and time in extraction project
+ 
+     
+     

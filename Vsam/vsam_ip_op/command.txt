@@ -1,0 +1,1 @@
+-c "/Users/apple/Downloads/vsam_ip_op/test3_copybook.cob" -d "/Users/apple/Downloads/vsam_ip_op/test3_data.txt" -op "/Users/apple/Downloads/vsam_ip_op/output" -mc -dx

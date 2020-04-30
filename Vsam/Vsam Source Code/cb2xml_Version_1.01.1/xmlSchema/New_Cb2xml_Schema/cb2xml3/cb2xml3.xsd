@@ -1,0 +1,47 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="item">
+    <xs:complexType mixed="true">
+      <xs:choice maxOccurs="unbounded" minOccurs="0">
+        <xs:element ref="item"/>
+        <xs:element ref="condition"/>
+      </xs:choice>
+      <xs:attribute type="xs:byte" name="level" use="optional"/>
+      <xs:attribute type="xs:string" name="name" use="optional"/>
+      <xs:attribute type="xs:string" name="picture" use="optional"/>
+      <xs:attribute type="xs:short" name="position" use="optional"/>
+      <xs:attribute type="xs:short" name="storage-length" use="optional"/>
+      <xs:attribute type="xs:short" name="display-length" use="optional"/>
+      <xs:attribute type="xs:string" name="numeric" use="optional"/>
+      <xs:attribute type="xs:string" name="sign-clause" use="optional"/>
+      <xs:attribute type="xs:byte" name="occurs" use="optional"/>
+      <xs:attribute type="xs:byte" name="scale" use="optional"/>
+      <xs:attribute type="xs:string" name="value" use="optional"/>
+      <xs:attribute type="xs:string" name="redefined" use="optional"/>
+      <xs:attribute type="xs:string" name="redefines" use="optional"/>
+      <xs:attribute type="xs:string" name="usage" use="optional"/>
+      <xs:attribute type="xs:string" name="sync" use="optional"/>
+      <xs:attribute type="xs:byte" name="occurs-min" use="optional"/>
+      <xs:attribute type="xs:string" name="depending-on" use="optional"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="condition">
+    <xs:complexType mixed="true">
+      <xs:sequence>
+        <xs:element ref="condition" maxOccurs="unbounded" minOccurs="0"/>
+      </xs:sequence>
+      <xs:attribute type="xs:string" name="value" use="optional"/>
+      <xs:attribute type="xs:byte" name="through" use="optional"/>
+      <xs:attribute type="xs:string" name="name" use="optional"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="copybook">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="item" maxOccurs="unbounded" minOccurs="0"/>
+      </xs:sequence>
+      <xs:attribute type="xs:string" name="filename"/>
+      <xs:attribute type="xs:string" name="dialect"/>
+      <xs:attribute type="xs:short" name="cb2xml-format"/>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

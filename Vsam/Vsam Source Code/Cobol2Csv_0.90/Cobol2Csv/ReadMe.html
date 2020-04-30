@@ -1,0 +1,35 @@
+<body>
+<h2>ReadMe - CobolToCsv</h2>
+<p>This project will convert single-record-type <i>Cobol Data</i> files
+to/from <i>Csv</i> Files. Also Multi-Record-Type can be converted to Csv.
+
+<p>Project documentation is available <a href="CobolToCsv.htm">here</a>.
+
+<p>The CobolToCsv project depends on:</p>
+<ul compact="">
+ <li>
+<a href="https://sourceforge.net/projects/cb2xml">cb2xml</a> -
+Converts a Cobol Copybook to Xml.
+ </li><li>
+<a href="https://sourceforge.net/projects/jrecord">JRecord</a> -
+Read/Write Cobol data files using a Cobol Copybook in Java. It also supplies the
+Csv file handling.
+</li></ul>
+<h2>Changes</h2>
+<h3>Version 0.90</h3>
+<p>Adding multi-Record type support</p>
+<ul>
+ <li>Adding MultiRecordCobol2Csv program (supports multi-record type files).</li>
+ <li>Use JRecord version 0.90 and cb2xml version 1.01.</li>
+</ul>
+<h3>Version 0.81.4</h3>
+<p>Updated for JRecord 081.4
+<ul>
+ <li>Allow field-seperators to specified in \u0001 format (\u followed by 4 hex characters).</li>
+ <li>Better support for using x'01' format for field seperators (delimiters).</li>
+</ul>
+<h3>Version 0.81.2</h3>
+<p>Updated for JRecord 081.2
+<h3>Version 0.81.1</h3>
+<p>Initial release, It has been split from the <a href="https://sourceforge.net/projects/jrecord">JRecord</a>
+project.

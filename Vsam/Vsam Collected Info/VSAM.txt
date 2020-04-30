@@ -1,0 +1,80 @@
+VSAM Collected Data
+
+
+You should look at cb2xml. It will parse a Cobol Copybook and create a Xml file. You can then process the Xml in python or any language. The cb2xml package has basic examples of processing the Xml in python + other languages.
+
+CopyBook
+========
+01 Ams-Vendor.
+       03 Brand               Pic x(3).
+       03 Location-details.
+          05 Location-Number  Pic 9(4).
+          05 Location-Type    Pic XX.
+          05 Location-Name    Pic X(35).
+       03 Address-Details.
+          05 actual-address.
+             10 Address-1     Pic X(40).
+             10 Address-2     Pic X(40).
+             10 Address-3     Pic X(35).
+          05 Postcode         Pic 9(4).
+          05 Empty            pic x(6).
+          05 State            Pic XXX.
+       03 Location-Active     Pic X.
+
+
+
+
+xml
+===
+?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<copybook filename="cbl2xml_Test110.cbl">
+    <item display-length="173" level="01" name="Ams-Vendor" position="1" storage-length="173">
+        <item display-length="3" level="03" name="Brand" picture="x(3)" position="1" storage-length="3"/>
+        <item display-length="41" level="03" name="Location-details" position="4" storage-length="41">
+            <item display-length="4" level="05" name="Location-Number" numeric="true" picture="9(4)" position="4" storage-length="4"/>
+            <item display-length="2" level="05" name="Location-Type" picture="XX" position="8" storage-length="2"/>
+            <item display-length="35" level="05" name="Location-Name" picture="X(35)" position="10" storage-length="35"/>
+        </item>
+        <item display-length="128" level="03" name="Address-Details" position="45" storage-length="128">
+            <item display-length="115" level="05" name="actual-address" position="45" storage-length="115">
+                <item display-length="40" level="10" name="Address-1" picture="X(40)" position="45" storage-length="40"/>
+                <item display-length="40" level="10" name="Address-2" picture="X(40)" position="85" storage-length="40"/>
+                <item display-length="35" level="10" name="Address-3" picture="X(35)" position="125" storage-length="35"/>
+            </item>
+            <item display-length="4" level="05" name="Postcode" numeric="true" picture="9(4)" position="160" storage-length="4"/>
+            <item display-length="6" level="05" name="Empty" picture="x(6)" position="164" storage-length="6"/>
+            <item display-length="3" level="05" name="State" picture="XXX" position="170" storage-length="3"/>
+        </item>
+        <item display-length="1" level="03" name="Location-Active" picture="X" position="173" storage-length="1"/>
+    </item>
+</copybook>
+
+
+
+
+2)This project is for converting Simple Cobol Data Files to/from Csv Files. 
+   java -jar ../lib/Cobol2Csv.jar ^
+                      -C DTAR020.cbl  -IFS Fixed_Length    -IC CP037 ^
+                      -Q DoubleQuote  -Delimiter , ^
+                      -I in/DTAR020.bin  -O out/o_DTAR020_a.csv
+
+
+3)D:\VSAM\CobolToXml_0.81.5\Example2>java -jar ../lib/Cobol2Xml.jar -cobol newXmpl.cbl -fileOrganisation text                 
+                                     -input  In.txt                           
+                                     -output out1.xml
+
+
+>> position error FIRST-TYPE %% REDEFINES-RECORD
+>> position error SECOND-TYPE %% REDEFINES-RECORD
+
+D:\VSAM\CobolToXml_0.81.5\Example2>pause
+Press any key to continue . . .
+
+
+
+4)convert cbl to xml
+java -jar ../../lib/cb2xml.jar -cobol cbl2xml_Test102.cbl -indentXml  -xml cbl2xml_Test102_new3.cbl.xml
+
+
+
+

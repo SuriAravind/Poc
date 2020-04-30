@@ -1,0 +1,72 @@
+<html>
+
+<H1><A NAME="Header_1">JRecord</A></H1>
+<P>
+<ul>
+ <li><a href="#Intro">Introduction</a></li>
+ <li><a href="#Jars">Jars in this directory</a></li>
+ <li><a href="#Csv2Cbl">Parameters for Cobol2Csv/Csv2Cobol</a></li>
+</ul>
+<P>
+<h2><a id="Intro">Introduction</a></h2>
+<P><B>JRecord</B> provides
+<ol>
+  <li>IO routines for Length Based (Lines are either fixed length or a length
+  field at the start f the record) files.</li>
+  <li>IO routines for Cobol files (both Text and Binary).
+</li>
+</ol>
+
+<h2><a id="Jars">Jars in this directory</a></h2>
+<ul>
+ <li><b>cb2xml.jar</b> - Cobol analysis Jar
+ <li><b>JRecord.jar</b> - JRecord library
+ <li><b>Cobol2Csv.jar</b> - Converts a Cobol-Data-File to a Csv data file. <b>cb2xml.jar</b> and <b>JRecord.jar</b> must be in the same directory as this jar file.
+ <li><b>Csv2Cobol.jar</b> - Converts a Csv to a Cobol Data File (Matching the data names).
+</ul>
+<p><b>Warning</b> - Cobol2Csv, Csv2Cobol and Cobol2Cobol are example programs I would suggest testing throughly before using them in production.
+<p><b>Note:</b> All three utilities now accept Xml-Schema's instead of Cobol-Copybooks
+</p>
+ 
+<h2><a id="Csv2Cbl">Parameters for Cobol2Csv/Csv2Cobol</a></h2>
+
+<pre>
+Program arguments:
+          
+    <font color="blue"><b>-I </b></font> or <font color="blue"><b>-InputFile </b></font>          : Input file
+    <font color="blue"><b>-O </b></font> or <font color="blue"><b>-OutputFile</b></font>          : Output file
+    <font color="blue"><b>-C </b></font> or <font color="blue"><b>-Copybook</b></font>            : Cobol Copybook file
+    <font color="blue"><b>-D </b></font> or <font color="blue"><b>-Delimiter </b></font>          : Field Separator (space, tab</b></font> or value)
+    <font color="blue"><b>-Q </b></font> or <font color="blue"><b>-Quote </b></font>              : Quote, you can use DoubleQuote SingleQuote as well as an a the char
+    <font color="blue"><b>-IC</b></font> or <font color="blue"><b>-InputCharacterSet</b></font>   : Input  font or character set
+    <font color="blue"><b>-OC</b></font> or <font color="blue"><b>-OutputCharacterSet</b></font>  : Output font or character set
+    <font color="blue"><b>-IFS</b></font> or <font color="blue"><b>-InputFileStructure</b></font> : Input File Structure:
+    <font color="blue"><b>-OFS</b></font> or <font color="blue"><b>-OutputFileStructure</b></font>: Output File Structure:
+        <b>Default      </b>: Determine by Copybook  
+        <b>Text         </b>: Use Standard Text IO 
+        <b>Fixed_Length </b>: Fixed record Length binary 
+        <b>Mainframe_VB </b>: Mainframe VB File 
+        <b>Mainframe_VB_As_RECFMU</b> : Mainframe VB File including BDW (block descriptor word)
+        <b>FUJITSU_VB   </b>: Fujitsu Cobol VB File 
+        <b>Open_Cobol_VB</b>: Gnu Cobol VB File 
+    <font color="blue"><b>-B</b></font> : Cobol Dialect
+        <b>0</b> or <b>Intel</b>        : Intel little endian 
+        <b>1</b> or <b>Mainframe</b>    : Mainframe big endian (Default) 
+        <b>4</b> or <b>Open_Cobol_Little_Endian_(Intel)</b>  : Gnu:Cobol 
+        <b>2</b> or <b>Fujitsu</b>      : Fujitsu Cobol 
+    <font color="blue"><b>-Rename</b></font>         : How to update cobol variable names
+        <b>0</b> or <b>Leave_Asis</b>                : Use the COBOL name
+        <b>1</b> or <b>Change_Minus_To_Undescore</b> : Change '-(),' to '_'
+        <b>2</b> or <b>Drop_Minus</b>                : Drop minus ('-') from the name
+    <font color="blue"><b>-CsvParser</b></font> : Controls how Csv fields are written / parsed
+        <b>0</b> or <b>Basic_Parser</b>                           : Parse Csv - when a field starts with " look for "&lt;FieldSeparator&gt;or "&lt;eol&gt 
+        <b>1</b> or <b>Standard_Parser</b>                        : Parse CSV matching Quotes
+        <b>2</b> or <b>Standard_Parse_Quote_4_Char_Fields</b>     : Standard Parser, add Quotes to all Char fields
+        <b>3</b> or <b>Basic_Parser_Column_names_in_quotes</b>    : Basic Parser, Field (Column) names in Quotes
+        <b>4</b> or <b>Standard_Parser_Column_names_in_quotes</b> : Standard Parser, Field (Column) names in Quotes
+        <b>5</b> or <b>Standard_Parser_Quote_4_Char_Fields_Column_names_in_quotes</b>        : Standard Parser, Char fields in Quotes,  Field (Column) names in Quotes
+        <b>6</b> or <b>Basic_Parser_Delimiter_all_fields</b>      : Basic Parser, Field Separator for all fields
+        <b>7</b> or <b>Basic_Parser_Delimiter_all_fields+1</b>    : Basic Parser, Field Separator for all fields + extra separator at the End-of-Line
+
+</pre>
+</html>
